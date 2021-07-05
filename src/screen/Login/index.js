@@ -1,20 +1,9 @@
 import React, { useState } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  Platform,
-  StatusBar,
-  TouchableWithoutFeedback,
-  Keyboard,
-} from 'react-native';
-// import { FontAwesome5 } from '@expo/vector-icons';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Platform, StatusBar, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import 'react-native-gesture-handler';
 import {InputsLogin} from '../../components/Input/InputsLogin'
-import Logo from '../assets/logo.png'
-import LogoFacebook from '../assets/facebook.png'
+import LogoInstagram from '../../assets/logo.png'
+import LogoFacebook from '../../assets/facebook.png'
 import styles from './style'
 
 export default function Login({handlePage}) {
@@ -24,7 +13,7 @@ export default function Login({handlePage}) {
             <StatusBar backgroundColor="#FFF" transLucent={false} />
 
             <Image
-              source={ Logo }
+              source={ LogoInstagram }
               style={styles.logo}
             />
 

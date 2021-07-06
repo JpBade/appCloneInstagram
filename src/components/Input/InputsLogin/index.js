@@ -6,11 +6,11 @@ export const InputsLogin = () => {
   return (
       <View>
           <TextInput
-              placeholder="Celular, username ou email"
+              placeholder="Número de telefone, email ou nome de usuário"
               style={styles.input}
             />
 
-            <TextInput placeholder="Sua senha" style={styles.input} secureTextEntry={true}/>
+            <TextInput placeholder="Senha" style={styles.input} secureTextEntry={true}/>
 
       </View>
   );

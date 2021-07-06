@@ -1,58 +1,71 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Platform, StatusBar, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, Text, View, Image, TouchableOpacity, Platform, StatusBar, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import 'react-native-gesture-handler';
-import {InputsLogin} from '../../components/Input/InputsLogin'
+import { InputsLogin } from '../../components/Input/InputsLogin'
 import LogoInstagram from '../../assets/logo.png'
 import LogoFacebook from '../../assets/facebook.png'
 import styles from './style'
 
-export default function Login({handlePage}) {
+export default function Login({ handlePage }) {
   return (
-        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-          <View style={styles.container}>
-            <StatusBar backgroundColor="#FFF" transLucent={false} />
+    <KeyboardAvoidingView behavior={"position"}>
+      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+        <View style={styles.container}>
 
-            <Image
-              source={ LogoInstagram }
-              style={styles.logo}
-            />
-
-            <InputsLogin/>
-
-            <View style={styles.forgotContainer}>
-              <TouchableOpacity>
-                <Text style={styles.forgotText}>Esqueceu sua senha?</Text>
-              </TouchableOpacity>
-            </View>
-
-            <TouchableOpacity style={styles.loginButton} onPress={() => handlePage()} >
-              <Text style={styles.loginText}>Acessar</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.facebookContainer}>
-              <Image
-                source={LogoFacebook}
-                style={{width: 30, height: 30}}
-              />
-              <Text style={styles.facebookText}>
-                Continue como Volnei Neves
-              </Text>
-            </TouchableOpacity>
-
-            <View style={styles.divisor}>
-              <View style={styles.divisorLine}></View>
-              <Text style={{marginHorizontal: '3%'}}>OU</Text>
-              <View style={styles.divisorLine}></View>
-            </View>
-
-            <View style={styles.signUpContainer}>
-              <Text style={styles.signUpText}>Não possui uma conta?</Text>
-              <TouchableOpacity>
-                <Text style={styles.signUpButton}>Cadastre-se.</Text>
-              </TouchableOpacity>
-            </View>
+          <View style={styles.languageView}>
+            <Text style={{ color: '#878787' }}>Português (Brasil)</Text>
           </View>
-        </TouchableWithoutFeedback>
+
+          <StatusBar backgroundColor="#FFF" transLucent={false} />
+
+          <Image
+            source={LogoInstagram}
+            style={styles.logo}
+          />
+
+          <InputsLogin />
+
+          <TouchableOpacity style={styles.loginButton} onPress={() => handlePage()} >
+            <Text style={styles.loginText}>Entrar</Text>
+          </TouchableOpacity>
+
+          <View style={styles.forgotContainer}>
+            <TouchableOpacity>
+              <Text style={styles.forgotTextFather}>
+                <Text style={styles.forgotText}>Esqueceu seus dados de login?</Text>
+                <Text style={styles.forgotTextBold}> Obtenha ajuda para entrar.</Text>
+              </Text>
+
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.divisor}>
+            <View style={styles.divisorLine}></View>
+            <Text style={styles.divisorText}>OU</Text>
+            <View style={styles.divisorLine}></View>
+          </View>
+
+          <TouchableOpacity style={styles.facebookContainer}>
+            <Image
+              source={LogoFacebook}
+              style={{ width: 25, height: 25 }}
+            />
+            <Text style={styles.facebookText}>Entrar com o Facebook</Text>
+          </TouchableOpacity>
+
+          <View style={styles.divisorFooter}>
+            <View style={styles.divisorLineFooter}></View>
+          </View>
+
+          <View style={styles.signUpContainer}>
+            <Text style={styles.signUpTextFather}>
+              <Text style={styles.signUpText}>Não tem uma conta?</Text>
+              <Text style={styles.signUpButton}> Cadastre-se.</Text>
+            </Text>
+          </View>
+        </View>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   );
 }
 

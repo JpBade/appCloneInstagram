@@ -1,4 +1,4 @@
-package com.meuinstagram;
+package com.flatlistgrid;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "meuInstagram";
+    return "FlatListGrid";
   }
 }

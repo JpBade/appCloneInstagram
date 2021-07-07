@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
 
   divisorLine: {
-    width: '42%',
+    width: '37%',
     height: 2,
     backgroundColor: '#EFEDED',
     borderRadius: 5,

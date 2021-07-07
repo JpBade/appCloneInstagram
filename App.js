@@ -1,11 +1,13 @@
+
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, StatusBar } from 'react-native';
 import 'react-native-gesture-handler';
-import Login from './src/screen/Login';
-import Feed from './src/screen/Feed';
+import Grid from './src/screens/Grid';
+import Login from './src/screens/Login';
 
 
 export default function App() {
+
   const [page, setPage] = useState(false)
 
   function handlePage() {
@@ -13,6 +15,25 @@ export default function App() {
   }
 
   return (
-    <View>{page ? <Feed /> : <Login handlePage={handlePage} />}</View>
+    <>
+      <StatusBar backgroundColor="#FFF" barStyle='dark-content' />
+      {page ? <Grid /> : <Login handlePage={handlePage} />}
+    </>
   )
 }
+
+/* 
+import React, { useState } from 'react';
+import 'react-native-gesture-handler';
+import Grid from './src/screens/Grid';
+import Login from './src/screens/Login';
+
+
+export default function App() {
+
+  return (
+
+      <Login/>
+
+  )
+} */

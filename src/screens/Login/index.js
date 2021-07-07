@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, KeyboardAvoidingView, Text, View, Image, TouchableOpacity, Platform, StatusBar, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import React from 'react';
+import { KeyboardAvoidingView, Text, View, Image, TouchableOpacity, Platform, StatusBar, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import 'react-native-gesture-handler';
 import { InputsLogin } from '../../components/Input/InputsLogin'
 import LogoInstagram from '../../assets/logo.png'
@@ -11,12 +11,11 @@ export default function Login({ handlePage }) {
     <KeyboardAvoidingView behavior={"position"}>
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         <View style={styles.container}>
+        <StatusBar backgroundColor="#FFF" barStyle='dark-content'/>
 
           <View style={styles.languageView}>
             <Text style={{ color: '#878787' }}>Português (Brasil)</Text>
           </View>
-
-          <StatusBar backgroundColor="#FFF" transLucent={false} />
 
           <Image
             source={LogoInstagram}
@@ -68,5 +67,3 @@ export default function Login({ handlePage }) {
     </KeyboardAvoidingView>
   );
 }
-
-
